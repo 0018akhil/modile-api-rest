@@ -1,13 +1,13 @@
 
 # Truecaller type REST API
 
-Here, is the REST API designed for moblie application to detect the whether the caller is spammer.
+Here, is the REST API designed for mobile applications to detect whether the caller is a spammer.
 
-For assumption we have cosidered the global database where every number is present with the spam likelyhood rating.
+For assumption, we have considered the global database where every number is present with the spam likelihood rating.
 
-When user downloads the moblie app the contacts are swithced to the user database after registration or login. When user adds the caller to spammers list the global database sapm likelyhood rating will be updated.
+When a user downloads the mobile app the contacts are switched to the user database after registration or login. When a user adds the caller to spammers list the global database spam likelihood rating will be updated.
 
-Adding email for the user is optional. User can add email after registration.
+Adding an email for the user is optional. Users can add email after registration.
 
 (user authentication is done through Token)
 
@@ -53,7 +53,7 @@ Response:{Token}
 Response:{Token}
 ```
 
-#### Get contacts from global database by name
+#### Get contacts from the global database by name
 
 ```
   GET /search?name={name}
@@ -66,7 +66,7 @@ Response:{Token}
 ```
 Response:{name, phone_number, spam_likely_hood}
 ```
-#### Get contacts from global database by number
+#### Get contacts from the global database by number
 
 ```
   GET /search?number={number}
@@ -79,11 +79,11 @@ Response:{name, phone_number, spam_likely_hood}
 ```
 Response:{name, phone_number, spam_likely_hood}
 ```
-The person’s email is only displayed if the person is a registered user and the  who is searching is in the person’s contact list.
+The person’s email is only displayed if the person is a registered user and the who is searching is in the person’s contact list.
 ```
 Response:{name, phone_number, spam_likely_hood, email}
 ```
-#### Add number to spam
+#### Add a number to the spam
 
 ```
   GET /spam?number={number}
