@@ -13,7 +13,7 @@ Adding email for the user is optional. User can add email after registration.
 
 ### Environment setup
 
-```python
+```
 virtualenv env
 env\Scripts\activate
 
@@ -23,7 +23,7 @@ pip install django djangorestframework
 ### API Endpoints
 #### SignUp
 
-```http
+```
   POST /signup
 ```
 
@@ -34,13 +34,13 @@ pip install django djangorestframework
 | `phone_number` | `string` | **Required**. phone number |
 | `name` | `string` | **Required**. your name |
 
-```json
+```
 Response:{Token}
 ```
 
 #### SignIn
 
-```http
+```
   POST /signin
 ```
 
@@ -49,13 +49,13 @@ Response:{Token}
 | `username` | `string` | **Required**. username |
 | `password` | `string` | **Required**. password |
 
-```json
+```
 Response:{Token}
 ```
 
 #### Get contacts from global database by name
 
-```http
+```
   GET /search?name={name}
 ```
 
@@ -63,12 +63,12 @@ Response:{Token}
 | :-------- | :------- | :------------------------- |
 | `name` | `string` | **Required**. name |
 
-```json
+```
 Response:{name, phone_number, spam_likely_hood}
 ```
 #### Get contacts from global database by number
 
-```http
+```
   GET /search?number={number}
 ```
 
@@ -76,16 +76,16 @@ Response:{name, phone_number, spam_likely_hood}
 | :-------- | :------- | :------------------------- |
 | `number` | `string` | **Required**. number |
 
-```json
+```
 Response:{name, phone_number, spam_likely_hood}
 ```
 The person’s email is only displayed if the person is a registered user and the  who is searching is in the person’s contact list.
-```json
+```
 Response:{name, phone_number, spam_likely_hood, email}
 ```
 #### Add number to spam
 
-```http
+```
   GET /spam?number={number}
 ```
 
@@ -93,12 +93,12 @@ Response:{name, phone_number, spam_likely_hood, email}
 | :-------- | :------- | :------------------------- |
 | `number` | `string` | **Required**. number |
 
-```json
+```
 Response:{phone_number, report_time}
 ```
 #### Add Email
 
-```http
+```
   POST /addemail
 ```
 
@@ -106,6 +106,6 @@ Response:{phone_number, report_time}
 | :-------- | :------- | :------------------------- |
 | `email` | `string` | **Required**. email |
 
-```json
+```
 Response:{message}
 ```
